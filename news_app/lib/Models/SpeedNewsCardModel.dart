@@ -1,5 +1,5 @@
 class CardModel {
   final String image;
-  final title;
+  final String title;
   const CardModel({required this.title, required this.image});
 }

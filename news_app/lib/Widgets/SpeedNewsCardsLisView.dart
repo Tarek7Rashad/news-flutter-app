@@ -6,7 +6,7 @@ class SpeedNewsCardsListView extends StatelessWidget {
   const SpeedNewsCardsListView({
     super.key,
   });
-  final List<CardModel> CardsContent = const [
+  final List<CardModel> cardsContent = const [
     CardModel(
       title: 'Science',
       image: 'assets/newsImages/science.jpg',
@@ -39,10 +39,10 @@ class SpeedNewsCardsListView extends StatelessWidget {
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: CardsContent.length,
+          itemCount: cardsContent.length,
           itemBuilder: (context, index) {
             return SpeedNewsCard(
-              cardModel: CardsContent[index],
+              cardModel: cardsContent[index],
             );
           }),
     );
