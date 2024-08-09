@@ -94,7 +94,11 @@ class _LoginScreenState extends State<LoginScreen>
                               Padding(
                                 padding: EdgeInsets.only(bottom: 16),
                                 child: Lottie.asset(
-                                    'assets/animation/animation.json'),
+                                  'assets/animation/animation.json',
+                                  width: 100,
+                                  height: 100,
+                                  controller: _animationController,
+                                ),
                               ),
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 20),
