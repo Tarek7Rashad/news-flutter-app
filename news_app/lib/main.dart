@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Screens/Home_Page.dart';
 import 'package:news_app/Screens/Login_Page.dart';
+import 'package:news_app/Screens/Register_Page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,8 @@ class NewsWidget extends StatelessWidget {
       home: const LoginScreen(),
       routes: {
         HomePage.id: (context) => const HomePage(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        SignUpScreen.id: (context) => const SignUpScreen(),
       },
     );
   }

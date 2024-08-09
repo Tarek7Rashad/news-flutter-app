@@ -54,25 +54,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             return SafeArea(
               child: Scaffold(
                 appBar: AppBar(
-                    automaticallyImplyLeading: false,
-                    elevation: 0,
-                    backgroundColor: Colors.transparent,
-                    title: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/Moghtareb-removebg-preview.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        const Text(
-                          'MOGHTAREB',
-                          style: TextStyle(fontSize: 16, color: kblueColor),
-                        ),
-                      ],
-                    )),
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                ),
                 body: SingleChildScrollView(
                   keyboardDismissBehavior:
                       ScrollViewKeyboardDismissBehavior.onDrag,

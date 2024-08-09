@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:news_app/Screens/Home_Page.dart';
+import 'package:news_app/Screens/Register_Page.dart';
 import 'package:news_app/Widgets/customButtonWidget.dart';
 import 'package:news_app/Widgets/customTextFormField.dart';
 import 'package:news_app/shared/components/constant.dart';
@@ -139,16 +140,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 labelText: "Password",
                                 controller: passwordEditingController,
                               ),
-
                               CustomButtonWidget(
                                   text: "Sign in",
                                   onPressed: () async {
-                                    if (rememberMe == true) {
-                                      // rememberMeFun();
-                                      setState(() {
-                                        log('from true login ${rememberMe.toString()}');
-                                      });
-                                    }
                                     try {
                                       if (formKey.currentState!.validate()) {
                                         loading = true;
@@ -190,16 +184,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               SizedBox(
                                 height: height * .001,
                               ),
-                              // TextButton(
-                              //     onPressed: () {
-                              //       Navigator.of(context).pushReplacementNamed(
-                              //           LoginAsAdminScreen.id);
-                              //     },
-                              //     child: const Text(
-                              //       "i'm admin",
-                              //       style: TextStyle(
-                              //           fontSize: 18, color: kblueGreyColor),
-                              //     )),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -213,8 +197,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       )),
                                   TextButton(
                                       onPressed: () {
-                                        // Navigator.of(context)
-                                        //     .pushNamed(RegisterPage.id);
+                                        Navigator.of(context)
+                                            .pushNamed(SignUpScreen.id);
                                       },
                                       child: const Text(
                                         'Sign Up',
