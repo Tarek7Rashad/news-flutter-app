@@ -1,8 +1,8 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:news_app/Screens/Home_Page.dart';
 import 'package:news_app/Screens/Register_Page.dart';
@@ -24,8 +24,21 @@ bool obscureText2 = true;
 
 bool loading = false;
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool rememberMe = false;
+class _LoginScreenState extends State<LoginScreen>
+    with TickerProviderStateMixin {
+  late AnimationController _animationController;
+  bool _isAnimationPlaying = false;
+  int _currentStep = 0;
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 5), // Adjust duration as needed
+    );
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -78,6 +91,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 16),
+                                child: Lottie.asset(
+                                    'assets/animation/animation.json'),
+                              ),
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 20),
                                 child: Text(
